@@ -1,14 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
-
 /* sidebar main box css  */
 .sidebar_box {
   position: relative;
   width: 220px;
-  height: 100vh;
   border-right: 1px solid rgb(232, 231, 231);
   z-index: 2;
 }
-
 
 /* project logo and name css  */
 .project_logo_name_main_box {
@@ -35,46 +31,131 @@
   left: 30px;
 }
 
-
 /* links box css  */
 
-.links_box{
-    height: 250px;
-    border-bottom: 1px solid rgb(232, 231, 231); 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
+.links_box {
+  height: 250px;
+  border-bottom: 1px solid rgb(232, 231, 231);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-
-.links{
-    display: flex;
-    flex-direction: row;
+.links {
+  display: flex;
+  flex-direction: row;
 }
 
-.links_child{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 15px;
-    margin-right: 10px; 
+.links_child {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  margin-right: 10px;
+  font-size: 16px;
+  color: #787486;
 }
 
 /* css for projects box  */
-.project_box{
-display: flex;
-flex-direction: column;
+.project_box {
+  display: flex;
+  flex-direction: column;
 }
 
-.projectbox_heading{
-display: flex;
-justify-content: space-between;
-padding: 20px;
+.projectbox_heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
 }
 
-.projectbox_heading span{
-    font-family: 'Inter', sans-serif;
-    color: rgb(103, 103, 103);
+.projectbox_heading span {
+  font-family: 'Inter', sans-serif;
+  color: rgb(103, 103, 103);
+  font-weight: 700;
+  font-size: 12px;
 }
 
+.project_list {
+  display: flex;
+  margin: 6px 4px;
+  color: #787486;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  padding: 6px 0px;
+  align-items: center;
+  position: relative;
+  font-size: 16px;
+}
 
+.project_list:hover {
+  background: rgba(80, 48, 229, 0.08);
+  border-radius: 6px;
+}
+
+.listcircle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.listname {
+  color: #787486;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  margin-right: 15px;
+}
+
+.list_more {
+  font-weight: 800;
+  color: #0d062d;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* sibar bottom  */
+.bottom_messege {
+  width: 200px;
+  height: 200px;
+  background-color: #f5f5f5;
+  border-radius: 16px;
+  margin-left: 10px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.bulb_icon {
+  position: absolute;
+  width: 66px;
+  height: 66px;
+  background: #c4c4c4;
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bulb_icon div {
+  width: 33px;
+  height: 33px;
+  background: rgba(252, 214, 74, 0.7);
+  filter: blur(17px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom_heading {
+}
+
+.bottom_paragraph {
+}
+
+.write_messege {
+}

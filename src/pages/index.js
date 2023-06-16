@@ -12,7 +12,6 @@ export default function Home() {
      <Navbar></Navbar>
      {/* side bar  */}
      <Sidebar></Sidebar>
-
      </div>
     </>
   )

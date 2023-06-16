@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import styles from "../src/styles/sidebar.module.css";
 import projectnamelogo from '../public/project_name_logo.svg'
@@ -9,7 +9,9 @@ import taskslogo from '../public/task.svg'
 import memberslogo from '../public/profile.svg'
 import settingslogo from '../public/setting.svg'
 import Addproject from '../public/addproject.svg'
+import LampOn from '../public/lampon.svg'
 import Link from 'next/link';
+
 
 function Sidebar() {
     // links array 
@@ -20,6 +22,28 @@ function Sidebar() {
         { linkname: "Members", logo: memberslogo },
         { linkname: "Settings", logo: settingslogo }
     ];
+
+    // porject list array 
+    const ProjectList = ['Mobile App', 'Website Redesign', 'Design System', 'Wireframes'];
+
+    // state for handle hover effect on project list 
+    const [hoverStates, setHoverStates] = useState(Array(ProjectList.length).fill(false));
+
+    const handleMouseEnter = (index) => {
+        setHoverStates((prevHoverStates) => {
+            const newHoverStates = [...prevHoverStates];
+            newHoverStates[index] = true;
+            return newHoverStates;
+        });
+    };
+
+    const handleMouseLeave = (index) => {
+        setHoverStates((prevHoverStates) => {
+            const newHoverStates = [...prevHoverStates];
+            newHoverStates[index] = false;
+            return newHoverStates;
+        });
+    };
     return (
         <>
             <aside className={`${styles.sidebar_box}`}>
@@ -55,10 +79,10 @@ function Sidebar() {
                         {/* mapping links array  */}
                         {links.map((linkgroup, index) => (
                             <Link href={"/"}>
-                            <div key={index} className={`${styles.links}`}>
-                                <Image src={linkgroup.logo} width={24} height={24} className={`${styles.links_child}`}/>
-                                <span className={`${styles.links_child}`}>{linkgroup.linkname}</span>
-                            </div>
+                                <div key={index} className={`${styles.links}`}>
+                                    <Image src={linkgroup.logo} width={24} height={24} className={`${styles.links_child}`} />
+                                    <span className={`${styles.links_child}`}>{linkgroup.linkname}</span>
+                                </div>
                             </Link>
                         ))}
 
@@ -66,15 +90,54 @@ function Sidebar() {
                 </div>
 
                 {/* projects box  */}
-                <div className={`${styles.project_box}`}> 
+                <div className={`${styles.project_box}`}>
 
-                <div className={`${styles.projectbox_heading}`}>
-                    <span>
-                        MY PROJECTS
-                    </span>
-                    <Image src={Addproject} width={16} height={16}/>
-                </div>
+                    {/* project heading  */}
+                    <div className={`${styles.projectbox_heading}`}>
+                        <span>
+                            MY PROJECTS
+                        </span>
+                        <Image src={Addproject} width={16} height={16} />
+                    </div>
+                    {/* project list  */}
+                    {ProjectList.map((list, index) => (
+                        <div key={index} className={`${styles.project_list}`} onMouseEnter={() => handleMouseEnter(index)}
+                            onMouseLeave={() => handleMouseLeave(index)}>
+                            {/* circle  */}
+                            <div className={`${styles.listcircle}`} style={{ backgroundColor: `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 150)}, ${Math.floor(Math.random() * 200)})` }}>
+                            </div>
+                            {/* project name  */}
+                            <div className={`${styles.listname}`} style={hoverStates[index] ? { color: "#0D062D", fontWeight: 600 } : { color: "#787486", fontWeight: 500 }}>{list}</div>
 
+                            {/* more button  */}
+                            <div className={`${styles.list_more}`} style={hoverStates[index]?{display:"flex"}:{display:"none"}}>...</div>
+                        </div>
+                    ))}
+
+                    <div className={`${styles.bottom_messege}`}>
+                        {/* bulb icon */}
+                        <div className={`${styles.bulb_icon}`}>
+                            <div>
+                                <Image src={LampOn} width={24} height={24}/>
+                            </div>
+
+                        </div>
+
+                        {/* heading  */}
+                        <div className={`${styles.bottom_heading}`}>
+
+                        </div>
+
+                        {/* paragraph  */}
+                        <div className={`${styles.bottom_paragraph}`}>
+
+                        </div>
+
+                        {/* write messege  */}
+                        <div className={`${styles.write_messege}`}>
+
+                        </div>
+                    </div>
                 </div>
             </aside>
         </>
