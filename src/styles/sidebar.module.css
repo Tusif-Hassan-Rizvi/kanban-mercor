@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+
+/* sidebar main box css  */
+.sidebar_box {
+  position: relative;
+  width: 220px;
+  height: 100vh;
+  border-right: 1px solid rgb(232, 231, 231);
+  z-index: 2;
+}
+
+
+/* project logo and name css  */
+.project_logo_name_main_box {
+  position: relative;
+  height: 70px;
+}
+.project_logo_name_box {
+  display: flex;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+.project_logo {
+  margin-right: 9px;
+}
+
+.project_logo_name_box span {
+  font-family: 'Inter', sans-serif;
+}
+
+.expand_arrow_logo {
+  position: relative;
+  left: 30px;
+}
+
+
+/* links box css  */
+
+.links_box{
+    height: 250px;
+    border-bottom: 1px solid rgb(232, 231, 231); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+
+.links{
+    display: flex;
+    flex-direction: row;
+}
+
+.links_child{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    margin-right: 10px; 
+}
+
+/* css for projects box  */
+.project_box{
+display: flex;
+flex-direction: column;
+}
+
+.projectbox_heading{
+display: flex;
+justify-content: space-between;
+padding: 20px;
+}
+
+.projectbox_heading span{
+    font-family: 'Inter', sans-serif;
+    color: rgb(103, 103, 103);
+}
+
+
