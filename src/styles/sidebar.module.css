@@ -23,7 +23,9 @@
 }
 
 .project_logo_name_box span {
-  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  color: #0d062d;
 }
 
 .expand_arrow_logo {
@@ -68,7 +70,6 @@
 }
 
 .projectbox_heading span {
-  font-family: 'Inter', sans-serif;
   color: rgb(103, 103, 103);
   font-weight: 700;
   font-size: 12px;
@@ -79,7 +80,6 @@
   margin: 6px 4px;
   color: #787486;
   font-weight: 500;
-  font-family: 'Inter', sans-serif;
   padding: 6px 0px;
   align-items: center;
   position: relative;
@@ -100,7 +100,6 @@
 
 .listname {
   color: #787486;
-  font-family: 'Inter', sans-serif;
   font-weight: 500;
   margin-right: 15px;
 }
@@ -126,36 +125,58 @@
   margin-left: 10px;
   margin-top: 60px;
   margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .bulb_icon {
   position: absolute;
   width: 66px;
   height: 66px;
-  background: #c4c4c4;
+  background: #f5f5f5;
   border-radius: 50%;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.bulb_icon div {
-  width: 33px;
-  height: 33px;
-  background: rgba(252, 214, 74, 0.7);
-  filter: blur(17px);
+  top: -30px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .bottom_heading {
+  font-weight: 500px;
+  color: black;
+  font-size: 14px;
+  margin-top: 15px;
 }
 
 .bottom_paragraph {
+  width: 166px;
+  margin: 10px 0;
+}
+.bottom_paragraph p {
+  text-align: center;
+  font-weight: 400;
+  color: #787486;
+  font-size: 12px;
 }
 
-.write_messege {
+
+.write_messege input {
+  width: 166px;
+  height: 40px;
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 0px 5px;
+  outline: none;
+}
+
+.write_messege input::placeholder {
+  color: black; 
+  text-align: center;
+  font-weight: 500; 
+  font-size: 14px;
 }

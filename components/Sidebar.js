@@ -110,7 +110,7 @@ function Sidebar() {
                             <div className={`${styles.listname}`} style={hoverStates[index] ? { color: "#0D062D", fontWeight: 600 } : { color: "#787486", fontWeight: 500 }}>{list}</div>
 
                             {/* more button  */}
-                            <div className={`${styles.list_more}`} style={hoverStates[index]?{display:"flex"}:{display:"none"}}>...</div>
+                            <div className={`${styles.list_more}`} style={hoverStates[index] ? { display: "flex" } : { display: "none" }}>...</div>
                         </div>
                     ))}
 
@@ -118,24 +118,25 @@ function Sidebar() {
                         {/* bulb icon */}
                         <div className={`${styles.bulb_icon}`}>
                             <div>
-                                <Image src={LampOn} width={24} height={24}/>
+                                <Image src={LampOn} width={24} height={24} className={`${styles.bulb_icon_logo}`} />
                             </div>
-
                         </div>
 
                         {/* heading  */}
                         <div className={`${styles.bottom_heading}`}>
-
+                            Thoughts Time
                         </div>
 
                         {/* paragraph  */}
                         <div className={`${styles.bottom_paragraph}`}>
-
+                            <p>
+                            We don’t have any notice for you, till then you can share your thoughts with your peers.
+                            </p>
                         </div>
 
                         {/* write messege  */}
                         <div className={`${styles.write_messege}`}>
-
+                            <input type='text' placeholder='Write a Messege'/>
                         </div>
                     </div>
                 </div>
