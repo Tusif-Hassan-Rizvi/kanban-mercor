@@ -13,7 +13,7 @@ import LampOn from '../public/lampon.svg'
 import Link from 'next/link';
 
 
-function Sidebar() {
+function Sidebar({getExpandSidebar, isexpand}) {
     // links array 
     const links = [
         { linkname: "Home", logo: homelogo },
@@ -44,9 +44,11 @@ function Sidebar() {
             return newHoverStates;
         });
     };
+
+    
     return (
         <>
-            <aside className={`${styles.sidebar_box}`}>
+            <aside className={`${styles.sidebar_box}`} style={isexpand?{display:"none"}:{display:"block"}}>
                 <div className={`${styles.project_logo_name_main_box}`}>
                     {/* project name and logo box */}
                     <div className={`${styles.project_logo_name_box}`}>
@@ -64,6 +66,10 @@ function Sidebar() {
 
                         {/* expan arrow logo  */}
                         <Image
+                            onClick={() => {
+                                getExpandSidebar(!isexpand)
+                            }
+                            }
                             className={`${styles.expand_arrow_logo}`}
                             src={Exapndarrow}
                             alt="Expand Arrow"
@@ -130,15 +136,17 @@ function Sidebar() {
                         {/* paragraph  */}
                         <div className={`${styles.bottom_paragraph}`}>
                             <p>
-                            We don’t have any notice for you, till then you can share your thoughts with your peers.
+                                We don’t have any notice for you, till then you can share your thoughts with your peers.
                             </p>
                         </div>
 
                         {/* write messege  */}
                         <div className={`${styles.write_messege}`}>
-                            <input type='text' placeholder='Write a Messege'/>
+                            <input type='text' placeholder='Write a Messege' />
                         </div>
                     </div>
+
+                    {/* ahh! side bar work is done at saturday 17/6/2023 at 11:25pm by Tusif. */}
                 </div>
             </aside>
         </>

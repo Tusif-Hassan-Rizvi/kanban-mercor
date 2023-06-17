@@ -4,12 +4,14 @@
   width: 220px;
   border-right: 1px solid rgb(232, 231, 231);
   z-index: 2;
+  background: white;
 }
 
 /* project logo and name css  */
 .project_logo_name_main_box {
   position: relative;
   height: 70px;
+  border-bottom: 1px solid rgb(232, 231, 231);
 }
 .project_logo_name_box {
   display: flex;
@@ -31,6 +33,7 @@
 .expand_arrow_logo {
   position: relative;
   left: 30px;
+  cursor: pointer;
 }
 
 /* links box css  */
