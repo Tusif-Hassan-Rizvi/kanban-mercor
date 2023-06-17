@@ -13,6 +13,9 @@
 .rotate_expand{
     transform: rotate(180deg);
     cursor: pointer;
+    position: absolute;
+    left: 0;
+    margin: 0 10px;
 }
 
 
