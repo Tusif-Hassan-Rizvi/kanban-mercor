@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Mainbox from '../../components/Mainbox'
-import Navbar from '../../components/Navbar'
 import Sidebar from '../../components/Sidebar'
 
 

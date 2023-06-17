@@ -6,6 +6,7 @@ import Nortification from '../public/nortification.svg'
 import MessegeQuestion from '../public/messegequestion.svg'
 import ArrowDown from '../public/arrowdown.svg'
 import ExpandArrow from '../public/Expandarrow.svg'
+import Link from 'next/link';
 
 
 export default function Navbar({getExpandNavbar, isexpand}) {
@@ -39,11 +40,13 @@ export default function Navbar({getExpandNavbar, isexpand}) {
                         </div>
 
                         {/* profile icon and info  */}
+                        <Link href={"/"}>
                         <div className={`${styles.profile_image}`}>
                             <div className={`${styles.profile_logo}`}>
                             </div>
                             <Image src={ArrowDown} width={18} height={18} />
                         </div>
+                        </Link>
 
 
                     </div>

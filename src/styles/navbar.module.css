@@ -57,6 +57,7 @@
 
 .calender_ask_group img {
   margin: 0 10px;
+  cursor: pointer;
 }
 
 /* profile group css  */
