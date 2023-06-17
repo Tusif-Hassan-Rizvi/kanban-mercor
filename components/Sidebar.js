@@ -13,7 +13,7 @@ import LampOn from '../public/lampon.svg'
 import Link from 'next/link';
 
 
-function Sidebar({getExpandSidebar, isexpand}) {
+function Sidebar({ getExpandSidebar, isexpand }) {
     // links array 
     const links = [
         { linkname: "Home", logo: homelogo },
@@ -45,10 +45,10 @@ function Sidebar({getExpandSidebar, isexpand}) {
         });
     };
 
-    
+
     return (
         <>
-            <aside className={`${styles.sidebar_box}`} style={isexpand?{display:"none"}:{display:"block"}}>
+            <aside className={`${styles.sidebar_box}`} style={isexpand ? { display: "none" } : { display: "block" }}>
                 <div className={`${styles.project_logo_name_main_box}`}>
                     {/* project name and logo box */}
                     <div className={`${styles.project_logo_name_box}`}>

@@ -12,7 +12,7 @@ export default function Navbar({getExpandNavbar, isexpand}) {
     return (
         <>
             <header>
-                <nav className={`${styles.navbar}`}>
+                <nav className={`${styles.navbar}`} style={isexpand?{width:'100vw'}:{width:'85vw'}}>
                     {/* navbar contents  */}
                     {/* exapnd sidebar  */}
                     <div className={`${styles.rotate_expand}`} style={isexpand?{display:"block"}:{display:"none"}} onClick={()=>getExpandNavbar(!isexpand)}>
@@ -26,8 +26,8 @@ export default function Navbar({getExpandNavbar, isexpand}) {
                     {/* calender ask and nortification group  */}
                     <div className={`${styles.calender_ask_group}`}>
                         <Image src={CalenderIcon} width={24} height={24} />
-                        <Image src={Nortification} width={24} height={24} />
                         <Image src={MessegeQuestion} width={24} height={24} />
+                        <Image src={Nortification} width={24} height={24} />
                     </div>
 
                     {/* profile group  */}

@@ -1,8 +1,11 @@
 import React from 'react'
+import Navbar from './Navbar'
 
-function Mainbox() {
+function Mainbox({getExpandNavbar, isexpand}) {
   return (
-    <div style={{width:"40vw", height:"40vh", backgroundColor:"red"}}>
+    <div >
+      {/* top navigation bar  */}
+      <Navbar getExpandNavbar={getExpandNavbar} isexpand={isexpand}></Navbar>
     </div>
   )
 }

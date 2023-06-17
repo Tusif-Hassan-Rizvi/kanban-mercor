@@ -6,8 +6,8 @@ import Sidebar from '../../components/Sidebar'
 
 
 export default function Home() {
-// state manage for exapnd sidebar 
-const [isexpand, setIsexpand] = useState(false)
+  // state manage for exapnd sidebar 
+  const [isexpand, setIsexpand] = useState(false)
 
   function getExpandNavbar(val) {
     console.log("navbarr", val);
@@ -21,13 +21,12 @@ const [isexpand, setIsexpand] = useState(false)
   return (
     <>
       <div>
-        {/* top navigation bar  */}
-        <Navbar getExpandNavbar={getExpandNavbar} isexpand={isexpand}></Navbar>
+
         <div className='flex flex-row'>
           {/* side bar  */}
           <Sidebar getExpandSidebar={getExpandSidebar} isexpand={isexpand}></Sidebar>
           {/* main box  */}
-          {/* <Mainbox></Mainbox> */}
+          <Mainbox getExpandNavbar={getExpandNavbar} isexpand={isexpand}></Mainbox>
         </div>
       </div>
     </>
