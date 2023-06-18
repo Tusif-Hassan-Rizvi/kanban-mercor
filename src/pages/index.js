@@ -20,12 +20,12 @@ export default function Home() {
   return (
     <>
       <div>
-
         <div className='flex flex-row'>
           {/* side bar  */}
           <Sidebar getExpandSidebar={getExpandSidebar} isexpand={isexpand}></Sidebar>
           {/* main box  */}
           <Mainbox getExpandNavbar={getExpandNavbar} isexpand={isexpand}></Mainbox>
+
         </div>
       </div>
     </>

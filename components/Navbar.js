@@ -13,7 +13,7 @@ export default function Navbar({getExpandNavbar, isexpand}) {
     return (
         <>
             <header>
-                <nav className={`${styles.navbar}`} style={isexpand?{width:'100vw'}:{width:'85vw'}}>
+                <nav className={`${styles.navbar}`} style={isexpand?{width:'99vw'}:{width:'85vw'}}>
                     {/* navbar contents  */}
                     {/* exapnd sidebar  */}
                     <div className={`${styles.rotate_expand}`} style={isexpand?{display:"block"}:{display:"none"}} onClick={()=>getExpandNavbar(!isexpand)}>
