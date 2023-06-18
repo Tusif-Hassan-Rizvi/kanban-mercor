@@ -100,37 +100,73 @@ export default function Mainbottombar() {
 
 
 const initialData = {
-    tasks: {
-        1: { id: 1, content: "Configure Next.js application" },
-        2: { id: 2, content: "Configure Next.js and tailwind " },
-        3: { id: 3, content: "Create sidebar navigation menu" },
-        4: { id: 4, content: "Create page footer" },
-        5: { id: 5, content: "Create page navigation menu" },
-        6: { id: 6, content: "Create page layout" },
+  tasks: {
+    1: {
+      id: 1,
+      tasktype: "Low",
+      heading: "Brainstroming",
+      content: "Brainstorming brings team members' diverse experience into play.",
     },
-    columns: {
-        "column-1": {
-            id: "column-1",
-            title: "TO Do",
-            taskIds: [1, 2],
-            circlecolor: "#5030e5",
-            bordercolor: "#5030e5"
-        },
-        "column-2": {
-            id: "column-2",
-            title: "On Progress",
-            taskIds: [3,4],
-            circlecolor: "#FFA500",
-            bordercolor: "#FFA500"
-        },
-        "column-3": {
-            id: "column-3",
-            title: "Done",
-            taskIds: [5,6],
-            circlecolor: "#76A5EA",
-            bordercolor: "#8BC48A"
-        },
+    2: {
+      id: 2,
+      tasktype: "High",
+      heading: "Research",
+      content: "User research helps you to create an optimal product for users.",
     },
-    // Facilitate reordering of the columns
-    columnOrder: ["column-1", "column-2", "column-3"],
+    3: {
+      id: 3,
+      tasktype: "High",
+      heading: "Wireframes",
+      content: "Low fidelity wireframes include the most basic content and visuals.",
+    },
+    4: {
+      id: 4,
+      tasktype: "Low",
+      heading: "Onboarding Illustrations",
+      content: "Create drag and drop feature",
+    },
+    5: {
+      id: 5,
+      tasktype: "Low",
+      heading: "Moodboard",
+      content: "Create page navigation menu",
+    },
+    6: {
+      id: 6,
+      tasktype: "Completed",
+      heading: "Mobile App Design",
+      content: "Create page layout",
+    },
+    7: {
+      id: 7,
+      tasktype: "Completed",
+      heading: "Design System",
+      content: "It just needs to adapt the UI from what you did before",
+    },
+  },
+  columns: {
+    "column-1": {
+      id: "column-1",
+      title: "To Do",
+      taskIds: [1, 2, 3],
+      circlecolor: "#5030e5",
+      bordercolor: "#5030e5",
+    },
+    "column-2": {
+      id: "column-2",
+      title: "On Progress",
+      taskIds: [4, 5],
+      circlecolor: "#FFA500",
+      bordercolor: "#FFA500",
+    },
+    "column-3": {
+      id: "column-3",
+      title: "Done",
+      taskIds: [6, 7],
+      circlecolor: "#76A5EA",
+      bordercolor: "#8BC48A",
+    },
+  },
+  // Facilitate reordering of the columns
+  columnOrder: ["column-1", "column-2", "column-3"],
 };

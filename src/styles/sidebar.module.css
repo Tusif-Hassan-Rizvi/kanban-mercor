@@ -80,7 +80,7 @@
 
 .project_list {
   display: flex;
-  margin: 6px 4px;
+  margin: 6px 6px;
   color: #787486;
   font-weight: 500;
   padding: 6px 0px;
@@ -183,4 +183,12 @@
   text-align: center;
   font-weight: 500; 
   font-size: 14px;
+}
+
+@media screen and (max-width: 800px) {
+  .sidebar_box {
+    position: absolute;
+    left: 0;
+    height: auto;
+  }
 }

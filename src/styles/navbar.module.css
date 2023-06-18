@@ -1,12 +1,12 @@
 .navbar {
   position: relative;
-  width: 100vw;
-  height: 70px;
+  width: auto;
+  min-height: 70px;
   background: #ffffff;
   border-bottom: 1px solid rgb(232, 231, 231);
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
 }
 
 .rotate_expand {
@@ -18,7 +18,6 @@
 /* input group css  */
 .input_box {
   position: relative;
-  margin-left: 50px;
 }
 
 .input_box input {
@@ -52,7 +51,7 @@
 /* calender nortification and ask css  */
 .calender_ask_group {
   display: flex;
-  margin-left: 300px;
+  padding-right: 30px;
 }
 
 .calender_ask_group img {
@@ -64,11 +63,15 @@
 .profile_group {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  margin-right: 20px;
 }
 
+
 .profile_group div{
-    margin: 0 8px;
+  margin: 0 7px;
 }
+
 
 .name_address {
   display: flex;
@@ -104,4 +107,40 @@
   background: url('../../public/men.jpg') no-repeat;
   background-size: cover;
   border-radius: 50%;
+}
+
+@media screen and (max-width: 800px) {
+  .navbar {
+    flex-wrap: wrap; 
+    padding: 10px; 
+    height: auto; 
+  }
+
+  .navbar div{
+    margin: 10px 0;
+  }
+
+  .input_box input{
+    width: 300px;
+    margin-left: 5px;
+  }
+
+  .profile_group a{
+    margin-left: 10px;
+  }
+
+  .profile_name{
+    font-size: 12px;
+  }
+
+  .profile_address{
+font-size: 10px;
+  }
+
+  .profile_logo{
+    width: 30px;
+    height: 30px;
+  }
+
+
 }

@@ -119,8 +119,7 @@
 /* sharebox view type css */
 .share_viewtype {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
 }
 
 .share_viewtype div {
@@ -170,6 +169,21 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 800px) {
+  .projectname_links {
+   flex-direction: column;
+  }
+
+  .filter_sort{
+    flex-direction: column;
+  }
+
+  .share_viewtype div{
+    margin-top: 20px;
+    margin-left: 0;
+    margin-right: 20px;
+  }
+}
 
 
 

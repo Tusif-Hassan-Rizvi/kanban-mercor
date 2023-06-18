@@ -45,10 +45,14 @@ function Sidebar({ getExpandSidebar, isexpand }) {
         });
     };
 
+    const mediaQuery =
+    typeof window !== "undefined" && window.matchMedia("(max-width: 800px)");
+    console.log("this is mediaqurry",mediaQuery.matches)
+
 
     return (
         <>
-            <aside className={`${styles.sidebar_box}`} style={isexpand ? { display: "none" } : { display: "block" }}>
+            <aside className={`${styles.sidebar_box}`} style={isexpand? { display: "none" } : { display: "block" }}>
                 <div className={`${styles.project_logo_name_main_box}`}>
                     {/* project name and logo box */}
                     <div className={`${styles.project_logo_name_box}`}>
