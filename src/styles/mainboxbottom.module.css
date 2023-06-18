@@ -88,7 +88,7 @@
 }
 .drag_box {
   width: 314px;
-  height: 177px;
+  min-height: 177px;
   background: #ffffff;
   border-radius: 16px;
   padding: 20px;

@@ -8,7 +8,6 @@ import TaskComment from "../public/taskcomments.svg";
 import TaskFile from "../public/taskfile.svg";
 
 const Column = ({ column, tasks }) => {
-  console.log("columns ", column.id, "Tasks", tasks);
   return (
     <Droppable droppableId={column.id}>
       {(droppableProvided, droppableSnapshot) => (
@@ -36,7 +35,7 @@ const Column = ({ column, tasks }) => {
             {/* add task icon  */}
             {column.id === "column-1" ? (
               <div className={`${styles.task_box_add_tasks}`}>
-                <Image src={AddTaskbox} width={24} height={24} />
+                <Image src={AddTaskbox} width={24} height={24} alt="add task" />
               </div>
             ) : null}
           </div>
@@ -59,18 +58,15 @@ const Column = ({ column, tasks }) => {
                   }}
                 >
                   {/* while dragging and dropping shows */}
-                  {/* <div
-                    className={`${styles.dragging_and_dropping}`}
-                    style={
-                      draggableSnapshot.isDragging
-                        ? {
-                            background: "rgba(80, 48, 229, 0.06)",
-                            border: "1px dashed rgba(80, 48, 229, 0.59)",
-                          }
-                        : { background: "none", border: "none" }
-                    }
-                  >
-                  </div> */}
+                  {/* {draggableSnapshot.isDragging && (
+                    <div
+                      className={`${styles.dragging_and_dropping}`}
+                      style={{
+                        background: "rgba(80, 48, 229, 0.06)",
+                        border: "1px dashed rgba(80, 48, 229, 0.59)",
+                      }}
+                    />
+                  )} */}
 
                   <div className={`${styles.drag_box}`}>
                     {/* task type and more  */}
@@ -81,15 +77,15 @@ const Column = ({ column, tasks }) => {
                         style={
                           task.tasktype === "Low"
                             ? {
-                                background: "rgba(223, 168, 116, 0.2)",
-                                color: "#d58d49",
-                              }
+                              background: "rgba(223, 168, 116, 0.2)",
+                              color: "#d58d49",
+                            }
                             : task.tasktype === "High"
-                            ? {
+                              ? {
                                 background: "rgba(216, 114, 125, 0.1)",
                                 color: "#D8727D",
                               }
-                            : {
+                              : {
                                 background: "rgba(131, 194, 157, 0.2)",
                                 color: "rgba(104, 178, 102, 1)",
                               }
@@ -118,14 +114,24 @@ const Column = ({ column, tasks }) => {
 
                       {/* comments  */}
                       <div className={`${styles.task_comments}`}>
-                        <Image src={TaskComment} width={16} height={16} />
+                        <Image
+                          src={TaskComment}
+                          width={16}
+                          height={16}
+                          alt="task comment"
+                        />
                         <span>0</span>
                         <span>Comments</span>
                       </div>
 
                       {/* files  */}
                       <div className={`${styles.task_files}`}>
-                        <Image src={TaskFile} width={16} height={16} />
+                        <Image
+                          src={TaskFile}
+                          width={16}
+                          height={16}
+                          alt="task file"
+                        />
                         <span>0</span>
                         <span>Files</span>
                       </div>

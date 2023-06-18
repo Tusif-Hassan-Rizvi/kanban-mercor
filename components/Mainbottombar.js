@@ -5,99 +5,98 @@ import styles from "../src/styles/mainboxbottom.module.css";
 
 const Column = dynamic(() => import("./Column"), { ssr: false });
 const reorderColumnList = (sourceCol, startIndex, endIndex) => {
-    const newTaskIds = Array.from(sourceCol.taskIds);
-    const [removed] = newTaskIds.splice(startIndex, 1);
-    newTaskIds.splice(endIndex, 0, removed);
+  const newTaskIds = Array.from(sourceCol.taskIds);
+  const [removed] = newTaskIds.splice(startIndex, 1);
+  newTaskIds.splice(endIndex, 0, removed);
 
-    const newColumn = {
-        ...sourceCol,
-        taskIds: newTaskIds,
-    };
+  const newColumn = {
+    ...sourceCol,
+    taskIds: newTaskIds,
+  };
 
-    return newColumn;
+  return newColumn;
 };
 
 export default function Mainbottombar() {
-    const [state, setState] = useState(initialData);
+  const [state, setState] = useState(initialData);
 
-    const onDragEnd = (result) => {
-        const { destination, source } = result;
+  const onDragEnd = (result) => {
+    const { destination, source } = result;
 
-        // If user tries to drop in an unknown destination
-        if (!destination) return;
+    // If user tries to drop in an unknown destination
+    if (!destination) return;
 
-        // if the user drags and drops back in the same position
-        if (
-            destination.droppableId === source.droppableId &&
-            destination.index === source.index
-        ) {
-            return;
-        }
+    // if the user drags and drops back in the same position
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
+      return;
+    }
 
-        // If the user drops within the same column but in a different positoin
-        const sourceCol = state.columns[source.droppableId];
-        const destinationCol = state.columns[destination.droppableId];
+    // If the user drops within the same column but in a different positoin
+    const sourceCol = state.columns[source.droppableId];
+    const destinationCol = state.columns[destination.droppableId];
 
-        if (sourceCol.id === destinationCol.id) {
-            const newColumn = reorderColumnList(
-                sourceCol,
-                source.index,
-                destination.index
-            );
+    if (sourceCol.id === destinationCol.id) {
+      const newColumn = reorderColumnList(
+        sourceCol,
+        source.index,
+        destination.index
+      );
 
-            const newState = {
-                ...state,
-                columns: {
-                    ...state.columns,
-                    [newColumn.id]: newColumn,
-                },
-            };
-            setState(newState);
-            return;
-        }
+      const newState = {
+        ...state,
+        columns: {
+          ...state.columns,
+          [newColumn.id]: newColumn,
+        },
+      };
+      setState(newState);
+      return;
+    }
 
-        // If the user moves from one column to another
-        const startTaskIds = Array.from(sourceCol.taskIds);
-        const [removed] = startTaskIds.splice(source.index, 1);
-        const newStartCol = {
-            ...sourceCol,
-            taskIds: startTaskIds,
-        };
-
-        const endTaskIds = Array.from(destinationCol.taskIds);
-        endTaskIds.splice(destination.index, 0, removed);
-        const newEndCol = {
-            ...destinationCol,
-            taskIds: endTaskIds,
-        };
-
-        const newState = {
-            ...state,
-            columns: {
-                ...state.columns,
-                [newStartCol.id]: newStartCol,
-                [newEndCol.id]: newEndCol,
-            },
-        };
-
-        setState(newState);
+    // If the user moves from one column to another
+    const startTaskIds = Array.from(sourceCol.taskIds);
+    const [removed] = startTaskIds.splice(source.index, 1);
+    const newStartCol = {
+      ...sourceCol,
+      taskIds: startTaskIds,
     };
-    return (
-        <>
-            <DragDropContext onDragEnd={onDragEnd}>
-                <div className={`${styles.main_container}`}>
-                    {state.columnOrder.map((columnId) => {
-                        const column = state.columns[columnId];
-                        const tasks = column.taskIds.map((taskId) => state.tasks[taskId]);
 
-                        return <Column key={column.id} column={column} tasks={tasks} />;
-                    })}
-                </div>
-            </DragDropContext>
-        </>
-    )
+    const endTaskIds = Array.from(destinationCol.taskIds);
+    endTaskIds.splice(destination.index, 0, removed);
+    const newEndCol = {
+      ...destinationCol,
+      taskIds: endTaskIds,
+    };
+
+    const newState = {
+      ...state,
+      columns: {
+        ...state.columns,
+        [newStartCol.id]: newStartCol,
+        [newEndCol.id]: newEndCol,
+      },
+    };
+
+    setState(newState);
+  };
+  return (
+    <>
+      <DragDropContext onDragEnd={onDragEnd}>
+        <div className={`${styles.main_container}`}>
+          {state.columnOrder.map((columnId) => {
+            const column = state.columns[columnId];
+            const tasks = column.taskIds.map((taskId) => state.tasks[taskId]);
+
+            return <Column key={column.id} column={column} tasks={tasks} />;
+          })}
+        </div>
+      </DragDropContext>
+    </>
+  );
 }
-
 
 const initialData = {
   tasks: {
@@ -105,19 +104,22 @@ const initialData = {
       id: 1,
       tasktype: "Low",
       heading: "Brainstroming",
-      content: "Brainstorming brings team members' diverse experience into play.",
+      content:
+        "Brainstorming brings team members' diverse experience into play.",
     },
     2: {
       id: 2,
       tasktype: "High",
       heading: "Research",
-      content: "User research helps you to create an optimal product for users.",
+      content:
+        "User research helps you to create an optimal product for users.",
     },
     3: {
       id: 3,
       tasktype: "High",
       heading: "Wireframes",
-      content: "Low fidelity wireframes include the most basic content and visuals.",
+      content:
+        "Low fidelity wireframes include the most basic content and visuals.",
     },
     4: {
       id: 4,
